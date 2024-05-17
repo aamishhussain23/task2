@@ -54,7 +54,7 @@ async def receive_token(param: str, data: TokenData):
         "Order Amount": 1234
     }
     # Load the credentials
-    creds = Credentials.from_authorized_user_info(data.token)
+    creds = Credentials(token=data.token)
     # Write the row data to the sheet
     try:
         write_to_sheet(row_data, creds)
